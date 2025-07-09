@@ -1,0 +1,16 @@
+/** biome-ignore-all lint/correctness/noUnusedVariables: test */
+import { Navigate, useParams } from "react-router-dom"
+
+type RoomParams = {
+    roomId: string
+}
+
+export function Room() {
+    const params = useParams<RoomParams>()
+
+    if (!params.roomId) {
+        return <Navigate to="/" />
+    }
+
+    return <div>Room details</div>
+}
